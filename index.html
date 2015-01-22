@@ -6,13 +6,18 @@
 <script src="app/js/app.js"></script>
 <script src="app/js/controllers/layout.js"></script>
 <script src="app/js/controllers/posts.js"></script>
+<link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+<link rel="stylesheet" href="app/stylesheets/index.css" media="screen" charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div class="header">
+  <header><!-- Header is visible on all sites-->
     <a ui-sref=".home">Home</a>
     <a ui-sref=".posts">Posts</a>
-  </div>
-  <div ui-view>
+    <h1>Blahhhhhhg</h1>
+  </header><!-- End header -->
+
+  <div ui-view><!-- Renders the post page-->
   </div>
 </body>
 </html>
