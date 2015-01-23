@@ -3,7 +3,8 @@
 var blogApp = angular.module('blogApp', [
 'ui.router',
 'homeControllerModule',
-'postsControllerModule'
+'postsControllerModule',
+'servicesModule'
 ]);
 
 // This is routing block
@@ -17,18 +18,18 @@ blogApp.config(function($stateProvider, $urlRouterProvider) {
     url: '/posts',
     templateUrl: 'app/views/posts.html',
   })
-  .state('posts.new', {
+  .state('new', {
     url: '/new-post',
-    views: {
-      'new': {
+    // views: {
+    //   'new': {
         templateUrl: 'app/views/new.html'
-      }
-    }
+    //   }
+    // }
   })
   .state('show', {
     url: '/post/:id',
     templateUrl: 'app/views/show.html'
   })
-  // Default in case user puts in weird inpzcut
+  // Default in case user puts in weird input
   $urlRouterProvider.otherwise('/');
 });

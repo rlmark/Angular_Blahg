@@ -28,7 +28,7 @@ aside {
   background-color: #DB6B71;
   width: 30%;
   display: block;
-  height: 100vh;
+  /*height: 100vh;*/
   color: white;
 }
 
@@ -71,4 +71,8 @@ button {
 h2 {
   text-align: center;
   font-weight: 300;
+}
+
+.bigContent {
+  height: 200px;
 }

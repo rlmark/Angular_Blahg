@@ -1,5 +1,31 @@
 <div ng-controller="postsController">
-  <a ui-sref=".new"> New Post </a>
-  <div ui-view="new"></div>
-  {{name}}
+
+  <!-- Posts display -->
+  <main>
+    <span class="allposts" ng-repeat="post in posts | filter:search:strict">
+      <a ui-sref="show({id: post.id})">
+        <h3>{{post.title}}</h3>
+      </a>
+
+      <span ng-if="post.tag_ids.length > 0">TAGS: </span><!--Tags-->
+      <small ng-repeat="tag_id in post.tag_ids">
+        {{getTagName(tag_id)}}
+      </small><!--End tags-->
+
+      <span>{{post.date | date:'EEEE'}}</span><!--Date-->
+
+      <p>
+        {{post.content}}
+      </p>
+    </span>
+  </main>
+  <!-- end of posts -->
+  <aside>
+    <div class="search"><!--Search-->
+      <h2>Search and Filter</h2>
+      Search: <input type="text" ng-model="search"/>
+      Search by title: <input type="text" ng-model="search.title"/>
+      Search is {{search}}
+    </div><!--End search-->
+  </aside>
 </div>
